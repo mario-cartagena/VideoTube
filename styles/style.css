@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+}
+.header {
+  background: #181818;
+  padding: 16px 40px 0 40px;
+}
+.header__nav {
+  display: flex;
+  gap: 2%;
+}
+.header__search {
+  display: flex;
+  flex-direction: row;
+}
+.header__search-bar {
+  font-family: "Poppins";
+  font-style: normal;
+  padding: 10px 16px;
+
+  width: 480px;
+  height: 48px;
+
+  /* Grey */
+
+  border: 1px solid #6f6f6f;
+  background: #181818;
+  border-radius: 8px 0px 0px 8px;
+}
+.header__search-boton {
+  width: 88px;
+  height: 48px;
+  padding: 12px 32px;
+  border-radius: 0px 8px 8px 0px;
+  background-color: #373737;
+  border: 0;
+}
+.header__search-boton img {
+  height: 100%;
+  filter: invert(75%);
+}
+
+.header__categories {
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+}
+.header__list a:nth-child(1){
+  background-color: #FFFFFF;
+  color: #181818;
+}
+.header__list a {
+  display: block;
+  padding: 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  background-color: #373737;
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+  border: .5px solid;
+  border-color: #ffffff;
+}
+
+.header__list li a:hover {
+  background-color: #e6e6e6;
+}
+.main{
+  background-color: #181818;
+}
+.main__videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  /* margin-top: 10px; */
+}
+.cardVideo {
+  width: 300px;
+}
+.cardVideo figure {
+  width: 100%;
+}
+.cardVideo figure img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.cardVideo section h3 {
+  width: 100%;
+  text-align: justify;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cardVideo section div img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cardVideo section div span {
+  color: #A3A3A3;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+.cardInformation{
+  display: flex;
+  gap: 8px;
+}
+.cardInformation img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.general{
+  display: grid;
+  gap: 5px;
+}
+.general__info{
+  display: grid;
+}
+@media screen and (max-width: 600px){
+  .header{
+    padding: 8px 28px;
+  }
+  .header__search-bar{
+    display: none;
+  }
+  .header__search{
+    align-items: center;
+  }
+  .header__search-boton{
+    background-color: #181818;
+    border: none;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+  }
+  .header__search-boton img{
+    filter: invert(75%);
+  }
+  .header__nav{
+    justify-content: space-between;
+  }
+}
