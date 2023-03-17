@@ -22,8 +22,6 @@ body{
   flex-direction: row;
 }
 .header__search-bar {
-  font-family: "Poppins";
-  font-style: normal;
   padding: 10px 16px;
 
   width: 480px;
@@ -63,11 +61,11 @@ body{
   padding: 0;
   gap: 8px;
 }
-.header__list a:nth-child(1){
+.header__list button:nth-child(1){
   background-color: #FFFFFF;
   color: #181818;
 }
-.header__list a {
+.header__list button {
   display: block;
   padding: 10px;
   border-radius: 25px;
@@ -78,7 +76,6 @@ body{
   border: .5px solid;
   border-color: #ffffff;
 }
-
 .header__list li a:hover {
   background-color: #e6e6e6;
 }
@@ -107,7 +104,6 @@ body{
   width: 100%;
   text-align: justify;
   color: #FFFFFF;
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -142,6 +138,13 @@ body{
 }
 .general__info{
   display: grid;
+
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  background-color: #181818;
+  color: #FFFFFF;
 }
 @media screen and (max-width: 600px){
   .header{
