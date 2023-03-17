@@ -192,6 +192,6 @@ export const videos = [
     image: "https://i.ytimg.com/vi/6cucosmPj-A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAhgGC4bFDy3o-77AsGRo1KkWpBWg",
     viewers: "17.166.263 vistas",
     date: "31 jul. 2018",
-    categoy: "Música"
+    category: "Música"
   },
 ];

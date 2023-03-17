@@ -34,7 +34,31 @@ const printVideos = (container, videoList) => {
     });
 };
 
-//Escuhcmaos el evento DOMContentLoaded y cuando suene que pinte los videos
+//Escuchamos el evento DOMContentLoaded y cuando suene que pinte los videos
 document.addEventListener("DOMContentLoaded", () => {
     printVideos(containerVideos, videos);
+});
+
+// ************ Filtrado por categorías **************+
+//Se crea un array con las categorías de los personajes existentes.
+const categories = ["all"];
+
+videos.forEach((video) => {
+    if(!categories.includes(video.category)){
+        categories.push(video.category);
+    }
+});
+
+console.log(categories);
+
+categories.forEach((item) => {
+    const botonFiltrado = document.getElementsByName(item)[0];
+    console.log(botonFiltrado);
+
+    botonFiltrado.addEventListener("click", () => {
+        const videosFiltrados = (item === "all" ? videos: videos.filter((elemento) => elemento.category === item));
+        console.log(videosFiltrados);
+        //Pintamos los videos por categoría
+        printVideos(containerVideos, videosFiltrados);
+    });
 });
