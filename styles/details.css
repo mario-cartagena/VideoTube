@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+}
+
+.header {
+  background: #181818;
+  padding: 16px 40px 0 40px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 2%;
+}
+
+.header__search {
+  display: flex;
+  flex-direction: row;
+}
+
+.header__search-bar {
+  padding: 10px 16px;
+
+  width: 480px;
+  height: 48px;
+
+  /* Grey */
+
+  border: 1px solid #6f6f6f;
+  background: #181818;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.header__search-boton {
+  width: 88px;
+  height: 48px;
+  padding: 12px 32px;
+  border-radius: 0px 8px 8px 0px;
+  background-color: #373737;
+  border: 0;
+}
+
+.header__search-boton img {
+  height: 100%;
+  filter: invert(75%);
+}
+
+.containerInfoVideo{
+  background-color: #181818;
+  display: flex;
+}
+
+.cardVideo{
+  display: flex;
+  gap: 12px;
+}
+
+.playVideo {
+  width: 849px;
+  height: 477px;
+  padding: 40px;
+  border: none;
+}
+.contenedorVideos{
+  width: 36%;
+  height: 100%;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardVideo figure img {
+  width: 195px;
+  height: 109px;
+  object-fit: cover;
+}
+
+.cardVideo section h3 {
+  width: 100%;
+  text-align: justify;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.cardVideo section div img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cardVideo section div span {
+  color: #A3A3A3;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.cardInformation{
+  display: flex;
+  gap: 8px;
+}
+.cardInformation img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.general__info{
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px){
+    .header{
+      padding: 8px 28px;
+    }
+    .header__search-bar{
+      display: none;
+    }
+    .header__search{
+      align-items: center;
+    }
+    .header__search-boton{
+      background-color: #181818;
+      border: none;
+      padding: 0;
+      width: 28px;
+      height: 28px;
+    }
+    .header__search-boton img{
+      filter: invert(75%);
+    }
+    .header__nav{
+      justify-content: space-between;
+    }
+    .containerInfoVideo{
+      display: block;
+    }
+    .containerInfoVideo iframe{
+      width: 100%;
+    }
+    .contenedorVideos{
+      width: 100%;
+      padding: 25px;
+    }
+  }

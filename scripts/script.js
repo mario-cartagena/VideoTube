@@ -15,17 +15,17 @@ const printVideos = (container, videoList) => {
         container.innerHTML += `
         <article class="cardVideo">
             <figure>
-                <img name=${video.id} src=${video.image}>
+                <img data-card="cards" name=${video.id} src=${video.image}>
             </figure>
             <section class="cardInformation">
-                <img src=${video.autorImage}>
+                <img data-card="cards" name=${video.id} src=${video.autorImage}>
                 <div class="general">
-                    <div>
-                        <h3>${video.name}</h3>
+                    <div class="general__title">
+                        <h3 data-card="cards" name=${video.id}>${video.name}</h3>
                     </div>
                     <div class="general__info">
-                        <span>${video.autorName}</span>
-                        <span>${video.viewers} - ${video.date}</span>
+                        <span data-card="cards" name=${video.id}>${video.autorName}</span>
+                        <span data-card="cards" name=${video.id}>${video.viewers} - ${video.date}</span>
                     </div>
                 </div>
             </section>
@@ -37,6 +37,16 @@ const printVideos = (container, videoList) => {
 //Escuchamos el evento DOMContentLoaded y cuando suene que pinte los videos
 document.addEventListener("DOMContentLoaded", () => {
     printVideos(containerVideos, videos);
+});
+
+//Vamos a escuchar el evento click sobre los videos
+document.addEventListener("click", (event) => {
+    const dataCardAttribute = event.target.getAttribute("data-card");
+    if (dataCardAttribute === "cards") {
+      const id = event.target.getAttribute("name");
+      sessionStorage.setItem("idVideo", JSON.stringify(id));
+      window.location.href = "../pages/detailsVideo.html";
+    }
 });
 
 // ************ Filtrado por categorías **************+
