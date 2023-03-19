@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/formVideo.css">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico" type="image/x-icon">
+    <title>VideoTube</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <figure class="header__figure">
+                <img class="header__image" src="../images/logo/logo.png" alt="Logo VideoTube">
+            </figure>
+            <section class="header__search">
+                <input type="text" class="header__search-bar" placeholder="Buscar video">
+                <button class="header__search-boton"><img src="../images/logo/busqueda.png" alt="Lupa de Búsqueda"></button>
+            </section>
+        </nav>
+    </header>
+    <main class="main">
+        <form id="form">
+            <label for="name">Nombre:</label>
+            <input id="name" type="text" placeholder="Ingrese el título del video">
+
+            <label for="video">Video:</label>
+            <input type="text" id="video" placeholder="Ingrese el link del video">
+
+            <label for="autorImage">Imagen del canal:</label>
+            <input type="text" id="autorImage" placeholder="Ingrese la imagen del canal">
+
+            <label for="autorName">Nombre del canal:</label>
+            <input type="text" id="autorName" placeholder="Ingrese el nombre del canal">
+
+            <label for="image">Miniatura del video:</label>
+            <input type="text" id="image" placeholder="Ingrese la miniatura del video">
+
+            <label for="viewers">Visualizaciones:</label>
+            <input type="text" id="viewers" placeholder="Ingrese el número de visualizaciones del video">
+
+            <label for="date">Fecha:</label>
+            <input type="text" id="date" placeholder="Ingrese la fecha del video">
+            
+            <label for="category">Categoria:</label>
+            <select id="category">
+                <option value="">Seleccione una opción</option>
+                <option value="Programación">Programación</option>
+                <option value="Música">Música</option>
+                <option value="Deportes">Deportes</option>
+            </select>
+
+            <button type="submit">Agrega video</button>
+        </form>
+    </main>
+    <script src="../scripts/formVideo.js" type="module"></script>
+</body>
+</html>

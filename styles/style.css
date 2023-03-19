@@ -9,10 +9,10 @@
 body{
   font-family: 'Poppins', sans-serif;
   font-style: normal;
+  background: #181818;
 }
 
 .header {
-  background: #181818;
   padding: 16px 40px 0 40px;
 }
 
@@ -37,7 +37,7 @@ body{
 
 .header__search-bar {
   padding: 10px 16px;
-
+  color: #FFFFFF;
   width: 480px;
   height: 48px;
 
@@ -113,10 +113,6 @@ body{
 
 .header__video li a:hover{
   font-weight: 700;
-}
-
-.main{
-  background-color: #181818;
 }
 
 .main__videos {
