@@ -2,6 +2,8 @@ import { videos } from "./dataVideos.js";
 
 console.log(videos);
 
+const listaVideos = JSON.parse(sessionStorage.getItem("videos")) || videos;
+
 //1. Capturamos el contenedor donde vamos a pintar todos los videos
 const containerVideos = document.querySelector(".main__videos");
 console.log(containerVideos);
@@ -36,7 +38,7 @@ const printVideos = (container, videoList) => {
 
 //Escuchamos el evento DOMContentLoaded y cuando suene que pinte los videos
 document.addEventListener("DOMContentLoaded", () => {
-    printVideos(containerVideos, videos);
+    printVideos(containerVideos, listaVideos);
 });
 
 //Vamos a escuchar el evento click sobre los videos
@@ -53,7 +55,7 @@ document.addEventListener("click", (event) => {
 //Se crea un array con las categorías de los personajes existentes.
 const categories = ["all"];
 
-videos.forEach((video) => {
+listaVideos.forEach((video) => {
     if(!categories.includes(video.category)){
         categories.push(video.category);
     }
@@ -66,9 +68,64 @@ categories.forEach((item) => {
     console.log(botonFiltrado);
 
     botonFiltrado.addEventListener("click", () => {
-        const videosFiltrados = (item === "all" ? videos: videos.filter((elemento) => elemento.category === item));
+        const videosFiltrados = (item === "all" ? listaVideos: listaVideos.filter((elemento) => elemento.category === item));
         console.log(videosFiltrados);
         //Pintamos los videos por categoría
         printVideos(containerVideos, videosFiltrados);
     });
+});
+
+//********* Busqueda de personajes por nombre  ************
+const filterByName = (termSearch, videoList) => {
+    const videosFiltrados = videoList.filter((video) =>
+    video.name.toLowerCase().includes(termSearch.toLowerCase())
+    );
+    //validar que no esté vacío
+    const result = videosFiltrados.length
+      ? videosFiltrados
+      : videoList;
+  
+    const messageResult = videosFiltrados.length
+      ? false
+      : "No existe este video!";
+    return {
+      resultSearch: result,
+      messageSearch: messageResult,
+    };
+};
+
+const formSearch = document.querySelector(".header__search");
+// console.log(formSearch);
+
+formSearch.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    console.log(formSearch.children);
+    const formChildren = Array.from(formSearch.children);
+    console.log(formChildren);
+
+    const inputSearch = formChildren.find((item) => item.localName === "input");
+    console.log(inputSearch);
+
+    const searchTerm = inputSearch.value;
+    console.log(searchTerm)
+
+    if(searchTerm){
+        const searchResult = filterByName(searchTerm, listaVideos);
+        console.log(searchResult);
+        printVideos(containerVideos, searchResult.resultSearch);
+        if(searchResult.messageSearch){
+            Swal.fire(
+                'Oops!',
+                searchResult.messageSearch,
+                'error'
+            )
+        }
+      }else{
+        Swal.fire(
+            'Oops!',
+            'No ingresaste el nombre del video!',
+            'error'
+        )
+      }
 });

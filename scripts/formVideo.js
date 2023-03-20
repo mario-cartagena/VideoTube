@@ -9,16 +9,17 @@ logo.addEventListener("click", () => {
 });
 
 //Escuchamos el form
-const form = document.getElementById("form");
+const form = document.querySelector(".form");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     
     const formChildren = Array.from(form.children);
+    console.log(formChildren)
     //Traigo un arreglo con los campos inputs y el select necesarios.
     const arrayCampos = formChildren.filter(
         (item) => item.localName === "input" || item.localName === "select"
     );
-    // console.log(arrayCampos);
+    console.log(arrayCampos);
 
     const newVideo = {
         name: "",
@@ -46,8 +47,16 @@ form.addEventListener("submit", (event) => {
 
     const validarCampos = validateFields(newVideo);
     if(validarCampos){
+
         newVideo.id = videos.length + 1;
         videos.push(newVideo);
+        sessionStorage.setItem("videos", JSON.stringify(videos));
+        Swal.fire(
+            'Buen trabajo!',
+            'El video se agregó!',
+            'success'
+        )
+        form.reset();
     }
     console.log(videos);
 });
@@ -66,7 +75,11 @@ const validateFields = (objetoVideo) => {
         }
     }
     if(camposVacios){
-        alert(`Faltan campos por agregar: ${camposVacios}`);
+        Swal.fire(
+            'Oops!',
+            'Faltan campos por agregar!',
+            'error'
+        )
         return false;
     }else{
         return true;

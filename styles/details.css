@@ -19,6 +19,7 @@ body{
 .header__nav {
   display: flex;
   gap: 2%;
+  align-items: center;
 }
 
 .header__search {
@@ -28,6 +29,7 @@ body{
 
 .header__search-bar {
   padding: 10px 16px;
+  color: #FFFFFF;
   width: 480px;
   height: 48px;
   border: 1px solid #6f6f6f;
@@ -49,6 +51,22 @@ body{
   filter: invert(75%);
 }
 
+.header__video{
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.header__video li a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.header__video li a:hover{
+  font-weight: 700;
+}
+
 .container{
   display: flex;
 }
@@ -67,7 +85,8 @@ body{
   height: 100%;
   padding: 40px 30px 30px 30px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -78,6 +97,7 @@ body{
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
+  text-overflow: ellipsis;
 }
 
 .container__actual h1{
@@ -91,6 +111,7 @@ body{
 
 .cardVideo{
   display: flex;
+  /* height: 120px; */
   gap: 12px;
 }
 
@@ -100,13 +121,23 @@ body{
   object-fit: cover;
 }
 
-.cardVideo section h3 {
+.section__info{
+  display: flex;
+  flex-direction: column;
+}
+.section__title{
+  width: 100%;
+  /* height: 100px; */
+  overflow: hidden;
+}
+
+.section h3 {
   width: 100%;
   text-align: justify;
   color: #FFFFFF;
   font-weight: 600;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 21px;
 }
 
 .cardVideo section div img {
@@ -145,19 +176,13 @@ body{
 .container__informacion{
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 .container__informacion span{
   display: flex;
   flex-direction: column;
 }
-.section__info{
-  display: flex;
-  flex-direction: column;
-}
 
-
-@media screen and (max-width: 600px){
+@media screen and (max-width: 900px){
     .header{
       padding: 8px 28px;
     }
@@ -186,15 +211,41 @@ body{
     .container__actual{
       width: 100%;
     }
-    .container iframe{
+    /* .container iframe{
       width: 100%;
-    }
+    } */
     .container__sugeridos{
       width: 100%;
       padding: 25px;
+      justify-content: center;
     }
+    .container__sugeridos h2{
+      justify-content: center;
+    }
+  
     .cardVideo{
       display: flex;
       flex-wrap: wrap;
+      width: calc(50% - 10px);
     }
+}
+
+
+@media screen and (max-width: 500px) {
+  .cardVideo {
+    width: 75%;
   }
+  .container__iframe{
+    height: 100%;
+  }
+  .container__informacion h1{
+    width: 100%;
+  }
+  .cardVideo__figure{
+    width: 100%;
+    height: 110px;
+  }
+  .section{
+    width: 195px;
+  }
+}

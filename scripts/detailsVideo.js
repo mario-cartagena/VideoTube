@@ -7,6 +7,8 @@ logo.addEventListener("click", () => {
   window.location.href = "../index.html";
 });
 
+const listaVideos = JSON.parse(sessionStorage.getItem("videos")) || videos;
+
 //Se agrega la información deseada del video: 1. Video, 2. Título, 3. Imagen del Canal, 4. Vistas y fecha, 5. Videos Sugeridos
 const showInfoVideo = (container, video) => {
   //1. Creamos el contenedor padre de la lista de videos sugeridos
@@ -68,12 +70,14 @@ const printVideosSuggested = (
   videosSugeridos.forEach((element) => {
     sectionVideos.innerHTML += `
       <article class="cardVideo">
-      <figure class="cardVideo__figure"><img class="cardVideo__img" src=${element.image} alt=${element.name} /></figure>
+      <figure class="cardVideo__figure"><img data-card="cards" name=${element.id} img class="cardVideo__img" src=${element.image} alt=${element.name} /></figure>
       <section class="section">
-          <h3 class="section__title">${element.name}</h3>
+          <div class="section__title">
+            <h3 data-card="cards" name=${element.id} class="section__title">${element.name}</h3>
+          </div>
           <div class="section__info">
-              <span>${element.autorName}</span>
-              <span>${element.viewers} - ${element.date}</span>
+              <span data-card="cards" name=${element.id}>${element.autorName}</span>
+              <span data-card="cards" name=${element.id}>${element.viewers} - ${element.date}</span>
           </div>
       </section>
     </article>
@@ -89,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(idVideo);
 
   //Buscamos el video que corresponda con el id
-  const video = videos.find((item) => item.id === idVideo);
+  const video = listaVideos.find((item) => item.id === idVideo);
   const containerVideo = document.querySelector(".container");
   const containerVideoActual = document.querySelector(".container__actual");
   showInfoVideo(containerVideoActual, video);
-  printVideosSuggested(containerVideo, videos, idVideo);
+  printVideosSuggested(containerVideo, listaVideos, idVideo);
 });

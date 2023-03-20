@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="shortcut icon" href="./images/logo/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>VideoTube</title>
 </head>
 <body>
@@ -14,10 +15,10 @@
             <figure class="header__figure">
                 <img src="./images/logo/logo.png" alt="Logo VideoTube">
             </figure>
-            <section class="header__search">
+            <form class="header__search">
                 <input type="text" class="header__search-bar" placeholder="Buscar video">
-                <button class="header__search-boton"><img src="./images/logo/busqueda.png" alt="Lupa de Búsqueda"></button>
-            </section>
+                <button type="submit" class="header__search-boton"><img src="./images/logo/busqueda.png" alt="Lupa de Búsqueda"></button>
+            </form>
             <ul class="header__video">
                 <li><a href="./pages/formVideo.html">Agregar nuevo video</a></li>
             </ul>
@@ -34,8 +35,6 @@
     <main class="main">
         <section class="main__videos"></section>
     </main>
-    <footer class="footer">¡Hecho con amor 😍por Mario Cartagena!</footer>
-
     <script src="./scripts/script.js" type="module"></script>
 </body>
 </html>
