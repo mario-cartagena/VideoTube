@@ -37,7 +37,9 @@ const showInfoVideo = (container, video) => {
     <img src=${video.autorImage} alt=${video.name}>
   </figure>
   <div class="container__informacion">
+  <div id="container_title">
     <h1>${video.name}</h1>
+    </div>
     </span> <span>${video.viewers} - ${video.date}</span>
   </div> 
   `;
@@ -99,3 +101,4 @@ document.addEventListener("DOMContentLoaded", () => {
   showInfoVideo(containerVideoActual, video);
   printVideosSuggested(containerVideo, listaVideos, idVideo);
 });
+

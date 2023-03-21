@@ -52,7 +52,7 @@ document.addEventListener("click", (event) => {
 });
 
 // ************ Filtrado por categorías **************+
-//Se crea un array con las categorías de los personajes existentes.
+//Se crea un array con las categorías de los videos existentes.
 const categories = ["all"];
 
 listaVideos.forEach((video) => {
@@ -75,7 +75,7 @@ categories.forEach((item) => {
     });
 });
 
-//********* Busqueda de personajes por nombre  ************
+//********* Busqueda de personajes por titulo  ************
 const filterByName = (termSearch, videoList) => {
     const videosFiltrados = videoList.filter((video) =>
     video.name.toLowerCase().includes(termSearch.toLowerCase())
