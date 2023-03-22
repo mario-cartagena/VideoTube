@@ -21,38 +21,6 @@ body{
   gap: 2%;
 }
 
-.header__search {
-  display: flex;
-  flex-direction: row;
-}
-
-.header__search-bar {
-  padding: 10px 16px;
-
-  width: 480px;
-  height: 48px;
-
-  /* Grey */
-
-  border: 1px solid #6f6f6f;
-  background: #181818;
-  border-radius: 8px 0px 0px 8px;
-}
-
-.header__search-boton {
-  width: 88px;
-  height: 48px;
-  padding: 12px 32px;
-  border-radius: 0px 8px 8px 0px;
-  background-color: #373737;
-  border: 0;
-}
-
-.header__search-boton img {
-  height: 100%;
-  filter: invert(75%);
-}
-
 .main{
   max-width: 500px;
   width: 100%;
@@ -134,25 +102,7 @@ body{
   .header{
     padding: 8px 28px;
   }
-  .header__search-bar{
-    width: 85%;
-  }
-  .header__search{
-    align-items: center;
-  }
-  .header__search-boton{
-    background-color: #181818;
-    border: none;
-    padding: 0;
-    width: 28px;
-    height: 28px;
-  }
-  .header__search-boton img{
-    filter: invert(75%);
-  } 
-  .header__nav{
-    justify-content: space-between;
-  }
+
   .main .form input{
     flex-direction: column;
     align-items: flex-start;

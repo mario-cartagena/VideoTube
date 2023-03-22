@@ -24,31 +24,28 @@ body {
 
 .header__search {
   display: flex;
-  flex-direction: row;
+  align-items: center;
 }
 
 .header__search-bar {
-  padding: 10px 16px;
-  color: #ffffff;
+  padding: 10px;
+  border: 1px solid#6f6f6f;
+  border-radius: 4px;
+  font-size: 16px;
   width: 480px;
   height: 48px;
-  border: 1px solid #6f6f6f;
-  background: #181818;
-  border-radius: 8px 0px 0px 8px;
+  background-color: #181818;
+  color: #ffffff;
 }
 
 .header__search-boton {
-  width: 88px;
-  height: 48px;
-  padding: 12px 32px;
-  border-radius: 0px 8px 8px 0px;
   background-color: #373737;
-  border: 0;
-}
-
-.header__search-boton img {
-  height: 100%;
-  filter: invert(75%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 0px 8px 8px 0px;
+  height: 48px;
 }
 
 .header__video {
@@ -58,10 +55,18 @@ body {
   margin-left: auto;
 }
 
+.header__video li{
+  min-width: 187px;
+}
 .header__video li a {
   color: rgb(255, 255, 255);
   text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(55, 55, 55);
+  display: block;
 }
+
 
 .header__video li a:hover {
   font-weight: 700;
@@ -259,31 +264,45 @@ body {
   .header {
     padding: 8px 28px;
   }
-  .header__search-bar {
-    width: 80%;
-  }
-  .header__search {
-    align-items: center;
-  }
-  .header__search-boton {
-    background-color: #181818;
-    border: none;
+  .header__search input[type="text"] {
+    width: 0;
     padding: 0;
-    width: 28px;
-    height: 28px;
+    margin: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    height: 40px;
   }
-  .header__search-boton img {
-    filter: invert(75%);
+  
+  .header__search button[type="submit"] {
+    margin-left: 0;
+  }
+  
+  .header__search button[type="submit"] i {
+    font-size: 20px;
+  }
+  
+  .header__search:hover input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0 5px;
+    overflow: visible;
   }
   .header__nav {
     justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .header__video li a{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 63%;
   }
   .cardVideo {
     width: 75%;
   }
-  /* .container__iframe {
-    height: 100%;
-  } */
+
   #container_title h1 {
     width: 100%;
     display: -webkit-box;

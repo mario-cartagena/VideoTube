@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Poppins', sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   background: #181818;
 }
@@ -18,41 +18,38 @@ body{
 
 .header__nav {
   display: flex;
-  gap: 2%;
+  gap: 35px;
   align-items: center;
 }
 
-.header__figure img{
+.header__figure img {
   cursor: pointer;
 }
 
 .header__search {
   display: flex;
-  flex-direction: row;
+  align-items: center;
 }
 
 .header__search-bar {
-  padding: 10px 16px;
-  color: #FFFFFF;
+  padding: 10px;
+  border: 1px solid#6f6f6f;
+  border-radius: 4px;
+  font-size: 16px;
   width: 480px;
   height: 48px;
-  border: 1px solid #6f6f6f;
-  background: #181818;
-  border-radius: 8px 0px 0px 8px;
+  background-color: #181818;
+  color: #ffffff;
 }
 
 .header__search-boton {
-  width: 88px;
-  height: 48px;
-  padding: 12px 32px;
-  border-radius: 0px 8px 8px 0px;
   background-color: #373737;
-  border: 0;
-}
-
-.header__search-boton img {
-  height: 100%;
-  filter: invert(75%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 0px 8px 8px 0px;
+  height: 48px;
 }
 
 .header__categories {
@@ -71,8 +68,8 @@ body{
   gap: 8px;
 }
 
-.header__list button:nth-child(1){
-  background-color: #FFFFFF;
+.header__list button:nth-child(1) {
+  background-color: #ffffff;
   color: #181818;
 }
 
@@ -84,7 +81,7 @@ body{
   background-color: #373737;
   color: #ffffff;
   transition: background-color 0.2s ease;
-  border: .5px solid;
+  border: 0.5px solid;
   border-color: #ffffff;
   cursor: pointer;
 }
@@ -93,19 +90,25 @@ body{
   background-color: #e6e6e6;
 }
 
-.header__video{
+.header__video {
   display: flex;
   list-style: none;
   gap: 10px;
   margin-left: auto;
 }
-
-.header__video li a{
+.header__video li{
+  min-width: 187px;
+}
+.header__video li a {
   color: rgb(255, 255, 255);
   text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(55, 55, 55);
+  display: block;
 }
 
-.header__video li a:hover{
+.header__video li a:hover {
   font-weight: 700;
 }
 
@@ -134,10 +137,15 @@ body{
 .cardVideo section h3 {
   width: 100%;
   text-align: justify;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .cardVideo section div img {
@@ -148,52 +156,67 @@ body{
 }
 
 .cardVideo section div span {
-  color: #A3A3A3;
+  color: #a3a3a3;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
 }
-.cardInformation{
+.cardInformation {
   display: flex;
   gap: 8px;
 }
-.cardInformation img{
+.cardInformation img {
   width: 50px;
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
 }
-.general{
+.general {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.general__info{
+.general__info {
   display: flex;
   flex-direction: column;
 }
 
-@media screen and (max-width: 600px){
-  .header{
+@media screen and (max-width: 600px) {
+  .header {
     padding: 8px 28px;
   }
-  .header__search-bar{
-    width: 50%;
-  }
-  .header__search{
-    align-items: center;
-  }
-  .header__search-boton{
-    background-color: #181818;
-    border: none;
+  .header__search input[type="text"] {
+    width: 0;
     padding: 0;
-    width: 28px;
-    height: 28px;
+    margin: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    height: 40px;
   }
-  .header__search-boton img{
-    filter: invert(75%);
-  } 
-  .header__nav{
+  
+  .header__search button[type="submit"] {
+    margin-left: 0;
+  }
+  
+  .header__search button[type="submit"] i {
+    font-size: 20px;
+  }
+  
+  .header__search:hover input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0 5px;
+    overflow: visible;
+  }
+  .header__nav {
     justify-content: space-between;
+    gap: 10px;
+  }
+  .header__video li a{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 63%;
   }
 }
