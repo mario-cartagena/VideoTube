@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Poppins', sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   background: #181818;
 }
@@ -29,7 +29,7 @@ body{
 
 .header__search-bar {
   padding: 10px 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 480px;
   height: 48px;
   border: 1px solid #6f6f6f;
@@ -51,65 +51,79 @@ body{
   filter: invert(75%);
 }
 
-.header__video{
+.header__video {
   display: flex;
   list-style: none;
   gap: 10px;
   margin-left: auto;
 }
 
-.header__video li a{
+.header__video li a {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
-.header__video li a:hover{
+.header__video li a:hover {
   font-weight: 700;
 }
 
-.container{
+.container {
   display: flex;
+  gap: 10px;
 }
 
-.container__actual{
+.container__actual {
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .container__iframe {
-  width: 100%;
-  height: 477px;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.iframe {
   padding: 40px 40px 0 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: none;
 }
-.container__sugeridos{
+.container__sugeridos {
   width: 36%;
   height: 100%;
-  padding: 40px 30px 30px 30px;
+  padding: 40px 30px 30px 0;
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.container__sugeridos h2{
+.container__sugeridos h2 {
   width: 100%;
   text-align: justify;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   text-overflow: ellipsis;
 }
 
-.container__actual h1{
+.container__actual h1 {
   width: 100%;
   text-align: justify;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 500;
   font-size: 20px;
   line-height: 36px;
 }
 
-.cardVideo{
+.cardVideo {
   display: flex;
   gap: 12px;
 }
@@ -120,23 +134,27 @@ body{
   object-fit: cover;
 }
 
-.section__info{
+.section__info {
   display: flex;
   flex-direction: column;
 }
-.section__title{
+.section__title {
   width: 100%;
-  /* height: 100px; */
   overflow: hidden;
 }
 
 .section h3 {
   width: 100%;
   text-align: justify;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .cardVideo section div img {
@@ -147,13 +165,13 @@ body{
 }
 
 .cardVideo section div span {
-  color: #A3A3A3;
+  color: #a3a3a3;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
 }
 
-.container__datos{
+.container__datos {
   display: flex;
   gap: 7px;
   padding: 0 40px 0 40px;
@@ -167,103 +185,118 @@ body{
 }
 
 .container__datos span {
-  color: #A3A3A3;
+  color: #a3a3a3;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
 }
-.container__informacion{
+.container__informacion {
   display: flex;
   flex-direction: column;
 }
-.container__informacion span{
+.container__informacion span {
   display: flex;
   flex-direction: column;
 }
 
-@media screen and (max-width: 900px){
-    .header{
-      padding: 8px 28px;
-    }
-    .header__search-bar{
-      width: 80%;
-    }
-    .header__search{
-      align-items: center;
-    }
-    .header__search-boton{
-      background-color: #181818;
-      border: none;
-      padding: 0;
-      width: 28px;
-      height: 28px;
-    }
-    .header__search-boton img{
-      filter: invert(75%);
-    }
-    .header__nav{
-      justify-content: space-between;
-    }
-    .container{
-      display: block;
-    }
-    .container__actual{
-      width: 100%;
-    }
-    .container__sugeridos{
-      width: 100%;
-      padding: 25px;
-      justify-content: center;
-    }
-    .container__sugeridos h2{
-      justify-content: center;
-    }
-  
-    .cardVideo{
-      display: flex;
-      flex-wrap: wrap;
-      width: calc(50% - 10px);
-    }
-}
-
-
-@media screen and (max-width: 500px) {
-  .header{
+@media screen and (max-width: 900px) {
+  .header {
     padding: 8px 28px;
   }
-  .header__search-bar{
+  .header__search-bar {
     width: 80%;
   }
-  .header__search{
+  .header__search {
     align-items: center;
   }
-  .header__search-boton{
+  .header__search-boton {
     background-color: #181818;
     border: none;
     padding: 0;
     width: 28px;
     height: 28px;
   }
-  .header__search-boton img{
+  .header__search-boton img {
     filter: invert(75%);
   }
-  .header__nav{
+  .header__nav {
+    justify-content: space-between;
+  }
+  .container {
+    display: block;
+  }
+  .container__actual {
+    width: 100%;
+  }
+  .container__sugeridos {
+    width: 100%;
+    padding: 25px;
+    justify-content: center;
+  }
+  .container__sugeridos h2 {
+    justify-content: center;
+  }
+  #container_title h1 {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .cardVideo {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(50% - 10px);
+  }
+
+  .section h3 {
+    width: 195px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    padding: 8px 28px;
+  }
+  .header__search-bar {
+    width: 80%;
+  }
+  .header__search {
+    align-items: center;
+  }
+  .header__search-boton {
+    background-color: #181818;
+    border: none;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+  }
+  .header__search-boton img {
+    filter: invert(75%);
+  }
+  .header__nav {
     justify-content: space-between;
   }
   .cardVideo {
     width: 75%;
   }
-  .container__iframe{
+  /* .container__iframe {
     height: 100%;
-  }
-  #container_title h1{
+  } */
+  #container_title h1 {
     width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
-  .cardVideo__figure{
+  .cardVideo__figure {
     width: 100%;
     height: 110px;
   }
-  .section{
+  .section {
     width: 195px;
   }
 }

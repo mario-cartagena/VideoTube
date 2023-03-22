@@ -11,22 +11,22 @@ const listaVideos = JSON.parse(sessionStorage.getItem("videos")) || videos;
 
 //Se agrega la información deseada del video: 1. Video, 2. Título, 3. Imagen del Canal, 4. Vistas y fecha, 5. Videos Sugeridos
 const showInfoVideo = (container, video) => {
-  //1. Creamos el contenedor padre de la lista de videos sugeridos
-  const containerVideoActual = document.createElement("div");
-  document.body.appendChild(containerVideoActual);
+  const contenedorIFrame = document.querySelector(".container__iframe");
 
   //Creamos el elemento iframe
   const iframe = document.createElement("iframe");
   //Se agregan clases para darle estilos al iframe
-  iframe.classList.add("container__iframe");
+  iframe.classList.add("iframe");
   //Actualizamos el src
   iframe.setAttribute("src", `${video.video}?autoplay=1`);
   iframe.setAttribute(
     "allow",
     "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   );
+  contenedorIFrame.appendChild(iframe);
+
   //Agregar el video al contenedor
-  container.appendChild(iframe);
+  container.appendChild(contenedorIFrame);
 
   // Titulo, imagen del canal, nombre del canal, fecha y vistas.
   const datosAdicionales = document.createElement("article");
